@@ -601,8 +601,12 @@
 
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
+
+
   
+  <script src="/js/src/Valine.min.js"></script>
+
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
@@ -616,10 +620,16 @@
         appId: 'mMbiuk0vFVArBpdo7mOF2Om0-gzGzoHsz',
         appKey: 'KG8XyP0o4ctj0tTI1ACu3gFN',
         placeholder: 'Just go go',
-        avatar:'mm',
-        guest_info:guest,
+        avatar:'wavatar',
+        guest_info:['nick'],
         pageSize:'10' || 10,
     });
+    var infoEle = document.querySelector('#comments .info');
+        if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+          infoEle.childNodes.forEach(function(item) {
+            item.parentNode.removeChild(item);
+    });
+   }
   </script>
 
 
